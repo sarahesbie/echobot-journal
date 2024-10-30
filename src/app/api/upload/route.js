@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import OpenAI from "openai";
 
-export const dynamic = "force-dynamic"; // New API route config syntax
+// New configuration
+export const runtime = "nodejs";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
