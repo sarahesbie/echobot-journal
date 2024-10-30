@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function DocumentUpload() {
+export default function DocumentUpload({ onContentProcessed }) {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState("");
 
@@ -20,15 +20,22 @@ export default function DocumentUpload() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
 
-    if (response.ok) {
-      setMessage("File uploaded successfully!");
-    } else {
-      setMessage("Failed to upload the file.");
+      if (data.status === "success") {
+        setMessage("File uploaded successfully!");
+        onContentProcessed(data.content); // Pass content to parent
+      } else {
+        setMessage("Failed to upload the file.");
+      }
+    } catch (error) {
+      console.error("Upload error:", error);
+      setMessage("Error uploading file.");
     }
   };
 

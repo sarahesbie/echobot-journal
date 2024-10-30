@@ -1,0 +1,69 @@
+/* ReportPage.module.css */
+
+/* Container for the main report page */
+.pageContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Title for the report page */
+.reportTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937; /* Dark gray */
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Container for the entire report content */
+.reportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+/* Styling for each section in the report */
+.section {
+  padding: 1.5rem;
+  background-color: #f3f4f6; /* Slightly darker background for sections */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Title for each report section */
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111827; /* Darker gray */
+  margin-bottom: 0.5rem;
+}
+
+/* Content within each report section */
+.sectionContent {
+  font-size: 1rem;
+  color: #374151; /* Medium gray for text */
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Loading and error messages */
+.loading {
+  font-size: 1rem;
+  color: #9ca3af; /* Gray */
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error {
+  font-size: 1rem;
+  color: #ef4444; /* Red for error */
+  text-align: center;
+  margin-top: 2rem;
+}
